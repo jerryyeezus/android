@@ -25,38 +25,17 @@
             android:gravity="center_vertical"
             android:minHeight="?android:attr/listPreferredItemHeightSmall"
             android:textAppearance="?android:attr/textAppearanceListItemSmall" />
-        <Switch
-                android:id="@+id/menurow_switch"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:minHeight="?android:attr/listPreferredItemHeightSmall"
-                android:padding="6dp"
-                android:textAppearance="?android:attr/textAppearanceListItemSmall"
-                android:textColor="#FFFFFF"
-                android:text="Closed Captioning"
-                android:textSize="12sp"
-                android:visibility="gone"
-                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/menurow_counter"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/rectangle"
-            android:gravity="center"
-            android:minHeight="?android:attr/listPreferredItemHeightSmall"
-            android:padding="6dp"
-            android:textAppearance="?android:attr/textAppearanceListItemSmall"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+
+
+        <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Switch"
+                android:visibility="gone"
+                android:id="@+id/menurow_switch"
+                android:layout_alignBottom="@+id/menurow_counter" android:layout_alignParentEnd="true"
+                android:layout_alignStart="@+id/menurow_title"/>
     </RelativeLayout>
 
     <View

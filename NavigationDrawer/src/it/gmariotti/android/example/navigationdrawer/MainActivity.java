@@ -170,10 +170,9 @@ public class MainActivity extends Activity {
 			// update selected item and title, then close the drawer
 	        mDrawerList.setItemChecked(position, true);
 	        String text= "menu click... should be implemented";
-	        Toast.makeText(MainActivity.this, text , Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, text , Toast.LENGTH_LONG).show();
 	        //You should reset item counter 
-	        mDrawer.closeDrawer(mDrawerList);
-			
+
 		}
 		
 	}

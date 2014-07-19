@@ -17,7 +17,6 @@
 package it.gmariotti.android.example.navigationdrawer;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,15 +90,16 @@ public class NsMenuAdapter extends ArrayAdapter<NsMenuItemModel> {
             view = LayoutInflater.from(getContext()).inflate(layout, null);
         }
 
-        if (item.type == 1 && !item.isHeader) {
-            Log.d("", "SWITCH");
-            Switch switchButton = (Switch) view.findViewById(R.id.menurow_switch);
-            switchButton.setVisibility(View.VISIBLE);
-        }
 
         TextView title = (TextView) view.findViewById(R.id.menurow_title);
         title.setText(item.title);
         title.setVisibility(View.VISIBLE);
+
+        if (item.type == 1 && !item.isHeader) {
+            Switch switchButton = (Switch) view.findViewById(R.id.menurow_switch);
+            switchButton.setVisibility(View.VISIBLE);
+            title.setVisibility(View.INVISIBLE);
+        }
 
         if (!item.isHeader) {
             TextView counter = (TextView) view.findViewById(R.id.menurow_counter);
