@@ -10,6 +10,15 @@
         <item>ns_menu_snippet6</item>
         <item>ns_menu_snippet7</item>
     </string-array>
+    <array name="ns_menu_types">
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </array>
 
     <array name="ns_menu_items_icon">
         <item>ic_action_settings</item>

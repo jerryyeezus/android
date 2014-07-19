@@ -24,20 +24,24 @@ package it.gmariotti.android.example.navigationdrawer;
  */
 public class NsMenuItemModel {
 
-	public int title;
+    private static final int LINK = 1;
+    private static final int BUTTON = 2;
+    public int title;
 	public int iconRes;
 	public int counter;
 	public boolean isHeader;
+    public int type;
 
-	public NsMenuItemModel(int title, int iconRes,boolean header,int counter) {
+	public NsMenuItemModel(int title, int iconRes,boolean header,int counter,int type) {
 		this.title = title;
-		this.iconRes = iconRes;
+        this.type = type;
+        this.iconRes = iconRes;
 		this.isHeader=header;
 		this.counter=counter;
 	}
-	
+
 	public NsMenuItemModel(int title, int iconRes,boolean header){
-		this(title,iconRes,header,0);
+		this(title,iconRes,header,0, LINK);
 	}
 	
 	public NsMenuItemModel(int title, int iconRes) {

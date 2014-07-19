@@ -77,10 +77,9 @@ public class MainActivity extends Activity {
 					this.getPackageName());
 			int id_icon = getResources().getIdentifier(menuItemsIcon[res],
 					"drawable", this.getPackageName());
+            int id_type = getResources().obtainTypedArray(R.array.ns_menu_types).getInt(res, 0);
 
-			NsMenuItemModel mItem = new NsMenuItemModel(id_title, id_icon);
-			if (res==1) mItem.counter=12; //it is just an example...
-			if (res==3) mItem.counter=3; //it is just an example...
+			NsMenuItemModel mItem = new NsMenuItemModel( id_title,  id_icon,false, 90, id_type);
 			mAdapter.addItem(mItem);
 			res++;
 		}

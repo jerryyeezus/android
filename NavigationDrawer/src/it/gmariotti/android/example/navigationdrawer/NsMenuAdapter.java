@@ -100,14 +100,18 @@ public class NsMenuAdapter extends ArrayAdapter<NsMenuItemModel> {
 				holder = (ViewHolder) tag;
 			}
 		}
-		
+
+
 		
 	    if(item != null && holder != null)
 	    {
 	    	if (holder.textHolder != null)
 				holder.textHolder.setText(item.title);
-	    	
-	    	if (holder.textCounterHolder != null){
+            if (getItem(position).type == 1 && !item.isHeader) {
+                view.findViewById(R.id.menurow_counter).setVisibility(View.GONE);
+            }
+
+            if (holder.textCounterHolder != null){
 	    		if (item.counter > 0){
 	    			holder.textCounterHolder.setVisibility(View.VISIBLE);
 	    			holder.textCounterHolder.setText(""+item.counter);
@@ -124,6 +128,7 @@ public class NsMenuAdapter extends ArrayAdapter<NsMenuItemModel> {
 					holder.imageHolder.setVisibility(View.GONE);
 				}
 			}
+
 	    }
 	    
 	    return view;		
