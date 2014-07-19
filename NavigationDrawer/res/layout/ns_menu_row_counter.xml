@@ -13,7 +13,6 @@
             android:id="@+id/menurow_icon"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_alignParentLeft="true"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:src="@drawable/ic_launcher_" />
@@ -26,6 +25,22 @@
             android:gravity="center_vertical"
             android:minHeight="?android:attr/listPreferredItemHeightSmall"
             android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+        <Switch
+                android:id="@+id/menurow_switch"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:minHeight="?android:attr/listPreferredItemHeightSmall"
+                android:padding="6dp"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                android:textColor="#FFFFFF"
+                android:text="Closed Captioning"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:textStyle="bold" />
 
         <TextView
             android:id="@+id/menurow_counter"
