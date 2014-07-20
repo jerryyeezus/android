@@ -90,6 +90,10 @@ public class NsMenuAdapter extends ArrayAdapter<NsMenuItemModel> {
             view = LayoutInflater.from(getContext()).inflate(layout, null);
         }
 
+        if (position > 0) {
+            view.setEnabled(false);
+        }
+
 
         TextView title = (TextView) view.findViewById(R.id.menurow_title);
         title.setText(item.title);
@@ -98,6 +102,9 @@ public class NsMenuAdapter extends ArrayAdapter<NsMenuItemModel> {
         if (item.type == 1 && !item.isHeader) {
             Switch switchButton = (Switch) view.findViewById(R.id.menurow_switch);
             switchButton.setVisibility(View.VISIBLE);
+            if (position > 1) {
+                switchButton.setEnabled(false);
+            }
             title.setVisibility(View.INVISIBLE);
         }
 
@@ -107,8 +114,6 @@ public class NsMenuAdapter extends ArrayAdapter<NsMenuItemModel> {
                 counter.setText("" + item.counter);
                 counter.setVisibility(View.VISIBLE);
             }
-
-
 
 
             ImageView icon = (ImageView) view.findViewById(R.id.menurow_icon);
