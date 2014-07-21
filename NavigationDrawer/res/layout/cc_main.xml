@@ -8,14 +8,17 @@
               android:dividerHeight="0dp"
               android:layout_width="match_parent"
               android:layout_height="match_parent" android:weightSum="1">
+
+
     <LinearLayout
             android:layout_width="fill_parent"
+            android:background="@drawable/bg"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
-            android:layout_marginTop="7dp"
             android:orientation="horizontal">
         <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                   android:src="@drawable/closed_captioning_symbol_40x30" android:padding="5dp"/>
+                   android:src="@drawable/closed_captioning_symbol_40x30"
+                   android:layout_marginTop="5dp"
+                   android:padding="5dp"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,67 +38,13 @@
             android:layout_height="1dp"
             android:layout_below="@+id/menurow_title"
             android:src="#DADADC"/>
-    <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
-            android:layout_marginTop="7dp"
-            android:orientation="horizontal">
-        <ImageView android:paddingLeft="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                   android:src="@drawable/action_add"/>
-        <Switch
-                android:layout_width="300dp"
-                android:layout_gravity="right"
-                android:layout_height="wrap_content"
-                android:text="Closed Captions"
-                android:textColor="@color/bluelight"
-                android:singleLine="true"
-                android:textSize="13sp"
-                android:thumbTextPadding="8dp"
-                android:switchMinWidth="19dp"
-                android:id="@+id/switch1" android:layout_weight="0.05" android:paddingLeft="25dp"
-                android:paddingRight="25dp"/>
-    </LinearLayout>
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/menurow_title"
-            android:src="#DADADC"/>
-    <!--    <Switch
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:text="Use Android Defaults"
-                android:singleLine="true"
-                android:textColor="@color/bluelight"
-                android:textSize="13sp"
-                android:enabled="false"
-                android:id="@+id/switch2" android:layout_weight="0.05" android:paddingLeft="25dp"
-                android:paddingRight="25dp"/>-->
-    <LinearLayout
-            android:id="@+id/moviesFilterRow"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
-            android:layout_marginTop="7dp"
-            android:orientation="horizontal">
-        <ImageView android:paddingLeft="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                   android:src="@drawable/action_add"/>
-        <Switch
-                android:layout_width="300dp"
-                android:thumbTextPadding="8dp"
-                android:switchMinWidth="19dp"
-                android:layout_height="wrap_content"
-                android:text="Use Android Defaults"
-                android:singleLine="true"
-                android:textColor="@color/bluelight"
-                android:textSize="13sp"
-                android:enabled="false"
-                android:id="@+id/switch2" android:layout_weight="0.05" android:paddingLeft="25dp"
-                android:paddingRight="25dp"/>
-    </LinearLayout>
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/menurow_title"
-            android:src="#DADADC"/>
+
+    <ViewFlipper
+            android:id="@+id/ccFlipper"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+        <include layout="@layout/cc_page_main" android:id="@+id/cc_page_main"/>
+        <include layout="@layout/cc_page_appearance" android:id="@+id/cc_page_appearance"/>
+    </ViewFlipper>
+
 </LinearLayout>
