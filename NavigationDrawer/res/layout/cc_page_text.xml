@@ -11,6 +11,6 @@
 
         <include layout="@layout/cc_page_text_main"/>
         <include layout="@layout/cc_page_text_color"/>
-        <!--<include layout="@layout/cc_page_text_font"/>-->
+        <include layout="@layout/cc_page_text_font"/>
     </ViewFlipper>
 </LinearLayout>

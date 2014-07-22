@@ -65,7 +65,8 @@ public class MainActivity extends Activity {
         mDrawerToggle = new CustomActionBarDrawerToggle(this, mDrawer);
 
         mCCFlipper = (ViewFlipper) findViewById(R.id.flipper);
-////        mCC_BackgroundFlipper = (ViewFlipper) findViewById(R.id.cc_background_flipper); // TODO
+        mCC_TextFlipper = (ViewFlipper) mCCFlipper.getChildAt(1).findViewById(R.id.flipper); // TODO
+        mCC_BackgroundFlipper = (ViewFlipper) mCCFlipper.getChildAt(2).findViewById(R.id.flipper); // TODO
 
 
         mTextPage = (LinearLayout) findViewById(R.id.cc_page_text);
@@ -105,7 +106,13 @@ public class MainActivity extends Activity {
                         @Override
                         public void onClick(View view) {
                             // TODO better logic
+                            if (mCC_BackgroundFlipper.getDisplayedChild() > 0) {
+                                mCC_BackgroundFlipper.setDisplayedChild(0);
+                            } else if (mCC_TextFlipper.getDisplayedChild() > 0) {
+                                mCC_TextFlipper.setDisplayedChild(0);
+                            } else {
                             mCCFlipper.setDisplayedChild(0);
+                            }
                         }
                     });
                     final ViewGroup subView = (ViewGroup) flipper.getChildAt(j);
