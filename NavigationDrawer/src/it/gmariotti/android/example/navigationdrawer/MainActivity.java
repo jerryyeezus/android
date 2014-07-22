@@ -17,7 +17,6 @@
 package it.gmariotti.android.example.navigationdrawer;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -28,7 +27,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 public class MainActivity extends Activity {
@@ -67,33 +65,17 @@ public class MainActivity extends Activity {
         mDrawerToggle = new CustomActionBarDrawerToggle(this, mDrawer);
 
         mCCFlipper = (ViewFlipper) findViewById(R.id.flipper);
-        mCC_TextFlipper = (ViewFlipper) findViewById(R.id.flipper);
-//        mCC_BackgroundFlipper = (ViewFlipper) findViewById(R.id.cc_background_flipper); // TODO
+////        mCC_BackgroundFlipper = (ViewFlipper) findViewById(R.id.cc_background_flipper); // TODO
 
-        mCC_TextColors = (LinearLayout) findViewById(R.id.cc_page_text_color);
-        mCC_TextColors.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                mCC_TextFlipper.setDisplayedChild(1);
-            }
-        });
 
         mTextPage = (LinearLayout) findViewById(R.id.cc_page_text);
         mTextPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mCCFlipper.setDisplayedChild(1);
+                resetFlipper();
             }
         });
-
-//        mCCBack = (LinearLayout) findViewById(R.id.cc_back_page_background);
-//        mCCBack.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                mCCFlipper.showPrevious();
-//            }
-//        });
 
         mCCEnableSwitch = (Switch) findViewById(R.id.switch_cc_enable);
         mCCAndroid = (Switch) findViewById(R.id.switch_cc_android);
@@ -113,19 +95,34 @@ public class MainActivity extends Activity {
             }
         });
 
-        final Context asdf = getApplicationContext();
-
         for (int i = 0; i < mCCFlipper.getChildCount(); i++) {
-            TextView valueTV = new TextView(asdf);
-            valueTV.setText("hallo hallo");
-            valueTV.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT));
-
-            ViewGroup flipper = (ViewGroup) mCCFlipper.getChildAt(i).findViewById(R.id.flipper);
+            final ViewGroup flipper = (ViewGroup) mCCFlipper.getChildAt(i).findViewById(R.id.flipper);
             if (flipper != null) {
                 for (int j = 0; j < flipper.getChildCount(); j++) {
-                    ViewGroup subView = (ViewGroup) flipper.getChildAt(j);
-                    subView.addView(valueTV);
+                    LinearLayout back = (LinearLayout) getLayoutInflater().inflate(R.layout.cc_back, null);
+                    back.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View view) {
+                            // TODO better logic
+                            mCCFlipper.setDisplayedChild(0);
+                        }
+                    });
+                    final ViewGroup subView = (ViewGroup) flipper.getChildAt(j);
+                    for (int k = 0; k < subView.getChildCount(); k++) {
+                        final int leafIndex = k / 2 + 1;
+                        View leafView = subView.getChildAt(k);
+                        if (leafView instanceof LinearLayout) {
+                            leafView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    ((ViewFlipper)flipper).setDisplayedChild(leafIndex);
+                                }
+                            });
+                        }
+                    }
+
+                    subView.addView(back);
                 }
             }
         }
@@ -141,7 +138,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        mCCTextPageColor = (LinearLayout) findViewById(R.id.cc_page_text_color);
+//        mCCTextPageColor = (LinearLayout) findViewById(R.id.cc_page_text_color);
 //        mCCTextPageColor.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -150,6 +147,15 @@ public class MainActivity extends Activity {
 //        });
 
         enableReleventButtons();
+    }
+
+    private void resetFlipper(){
+        for (int i = 0; i < mCCFlipper.getChildCount(); i++) {
+            final ViewFlipper flipper = (ViewFlipper) mCCFlipper.getChildAt(i).findViewById(R.id.flipper);
+            if (flipper != null) {
+                flipper.setDisplayedChild(0);
+            }
+        }
     }
 
     private void enableReleventButtons() {

@@ -1,7 +1,6 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:id="@+id/cc_back"
         android:layout_height="wrap_content"
         android:background="@android:drawable/list_selector_background"
         android:clickable="true"
@@ -22,4 +21,8 @@
             android:textSize="18sp"
             android:text="Back"
             />
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
 </LinearLayout>
