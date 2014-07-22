@@ -13,101 +13,164 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
+
 package it.gmariotti.android.example.navigationdrawer;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 public class MainActivity extends Activity {
 
-    ViewFlipper mCCFlipper;
-    LinearLayout mAppearancePage;
-    ViewFlipper ccFlipper ;
+    private LinearLayout mCC_TextColors;
     private DrawerLayout mDrawer;
     private CustomActionBarDrawerToggle mDrawerToggle;
-    int a = 0;
+    private ViewFlipper mCCFlipper, mCC_TextFlipper, mCC_BackgroundFlipper;
+
+    /*Back buttons*/
+    private LinearLayout mCCBack;
+
+    private LinearLayout mTextPage;
+    private Switch mCCEnableSwitch;
+    private Switch mCCAndroid;
+    private LinearLayout mCCBackground;
+    private LinearLayout mCCTextPageColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_drawer);
-
-        // enable ActionBar app icon to behave as action to toggle nav drawer
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
-//
+
+        initCaptionsDrawer();
+    }
+
+    private void initCaptionsDrawer() {
+        Animation slide_in_right = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
+        Animation slide_out_left = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawer.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-        mDrawerToggle = new CustomActionBarDrawerToggle(this, mDrawer);
         mDrawer.setDrawerListener(mDrawerToggle);
-        mCCFlipper = (ViewFlipper) findViewById(R.id.ccFlipper);
 
-        mAppearancePage = (LinearLayout) findViewById(R.id.cc_appearance);
-        mAppearancePage.setOnClickListener(new View.OnClickListener() {
+        mDrawerToggle = new CustomActionBarDrawerToggle(this, mDrawer);
+
+        mCCFlipper = (ViewFlipper) findViewById(R.id.flipper);
+        mCC_TextFlipper = (ViewFlipper) findViewById(R.id.flipper);
+//        mCC_BackgroundFlipper = (ViewFlipper) findViewById(R.id.cc_background_flipper); // TODO
+
+        mCC_TextColors = (LinearLayout) findViewById(R.id.cc_page_text_color);
+        mCC_TextColors.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View view) {
-                mCCFlipper.showNext();
+            public void onClick(View v) {
+                mCC_TextFlipper.setDisplayedChild(1);
             }
         });
 
-        Animation slide_in_right = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
-        Animation slide_out_left = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
+        mTextPage = (LinearLayout) findViewById(R.id.cc_page_text);
+        mTextPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCCFlipper.setDisplayedChild(1);
+            }
+        });
+
+//        mCCBack = (LinearLayout) findViewById(R.id.cc_back_page_background);
+//        mCCBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mCCFlipper.showPrevious();
+//            }
+//        });
+
+        mCCEnableSwitch = (Switch) findViewById(R.id.switch_cc_enable);
+        mCCAndroid = (Switch) findViewById(R.id.switch_cc_android);
+        mCCAndroid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enableReleventButtons();
+                v.invalidate();
+            }
+        });
+        mCCEnableSwitch.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                enableReleventButtons();
+                v.invalidate();
+            }
+        });
+
+        final Context asdf = getApplicationContext();
+
+        for (int i = 0; i < mCCFlipper.getChildCount(); i++) {
+            TextView valueTV = new TextView(asdf);
+            valueTV.setText("hallo hallo");
+            valueTV.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT));
+
+            ViewGroup flipper = (ViewGroup) mCCFlipper.getChildAt(i).findViewById(R.id.flipper);
+            if (flipper != null) {
+                for (int j = 0; j < flipper.getChildCount(); j++) {
+                    ViewGroup subView = (ViewGroup) flipper.getChildAt(j);
+                    subView.addView(valueTV);
+                }
+            }
+        }
 
         mCCFlipper.setInAnimation(slide_in_right);
-        //set the animation for the view leaving th screen
         mCCFlipper.setOutAnimation(slide_out_left);
 
+        mCCBackground = (LinearLayout) findViewById(R.id.cc_page_background);
+        mCCBackground.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCCFlipper.setDisplayedChild(2);
+            }
+        });
 
+        mCCTextPageColor = (LinearLayout) findViewById(R.id.cc_page_text_color);
+//        mCCTextPageColor.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mCCFlipper.setDisplayedChild(3);
+//            }
+//        });
+
+        enableReleventButtons();
     }
 
-//    private void _initMenu() {
-//        NsMenuAdapter mAdapter = new NsMenuAdapter(this);
-//
-//        // Add Header
-//        mAdapter.addHeader(R.string.ns_menu_main_header);
-//
-//        // Add first block
-//
-//        menuItems = getResources().getStringArray(
-//                R.array.ns_menu_items);
-//        String[] menuItemsIcon = getResources().getStringArray(
-//                R.array.ns_menu_items_icon);
-//
-//        int res = 0;
-//        for (String item : menuItems) {
-//
-//            int id_title = getResources().getIdentifier(item, "string",
-//                    this.getPackageName());
-//            int id_icon = getResources().getIdentifier(menuItemsIcon[res],
-//                    "drawable", this.getPackageName());
-//            int id_type = getResources().obtainTypedArray(R.array.ns_menu_types).getInt(res, 0);
-//
-//            NsMenuItemModel mItem = new NsMenuItemModel(id_title, id_icon, false, 90, id_type);
-//            mAdapter.addItem(mItem);
-//            res++;
-//        }
-//
-//        mAdapter.addHeader(R.string.ns_menu_main_header2);
-//
-//        mDrawerList = (ListView) findViewById(R.id.drawer);
-//        if (mDrawerList != null)
-//            mDrawerList.setAdapter(mAdapter);
-//
-//
-//    }
+    private void enableReleventButtons() {
+        boolean shouldEnableAndroid = false;
+        boolean shouldEnableCustom = false;
+        if (mCCEnableSwitch.isChecked() && !mCCAndroid.isChecked()) {
+            shouldEnableAndroid = true;
+            shouldEnableCustom = true;
+        } else if (mCCEnableSwitch.isChecked() && mCCAndroid.isChecked()) {
+            shouldEnableAndroid = true;
+            shouldEnableCustom = false;
+        }
+        mCCAndroid.setEnabled(shouldEnableAndroid);
+        mTextPage.setEnabled(shouldEnableCustom);
+        mTextPage.getChildAt(0).setEnabled(shouldEnableCustom);
+        mCCBackground.setEnabled(shouldEnableCustom);
+        mCCBackground.getChildAt(0).setEnabled(shouldEnableCustom);
+
+        mTextPage.invalidate();
+        mCCAndroid.invalidate();
+    }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -140,21 +203,13 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        /*
-         * The action bar home/up should open or close the drawer.
-		 * ActionBarDrawerToggle will take care of this.
-		 */
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-
-
-        // Handle your other action bar items...
         return super.onOptionsItemSelected(item);
     }
 
     private class CustomActionBarDrawerToggle extends ActionBarDrawerToggle {
-
         public CustomActionBarDrawerToggle(Activity mActivity, DrawerLayout mDrawerLayout) {
             super(
                     mActivity,
@@ -176,6 +231,4 @@ public class MainActivity extends Activity {
             invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
         }
     }
-
-
 }

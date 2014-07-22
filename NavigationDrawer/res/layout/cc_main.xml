@@ -36,15 +36,15 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/menurow_title"
             android:src="#DADADC"/>
 
     <ViewFlipper
-            android:id="@+id/ccFlipper"
+            android:id="@+id/flipper"
             android:layout_height="match_parent"
             android:layout_width="match_parent">
-        <include layout="@layout/cc_page_main" android:id="@+id/cc_page_main"/>
-        <include layout="@layout/cc_page_appearance" android:id="@+id/cc_page_appearance"/>
+        <include layout="@layout/cc_page_main" />
+        <include layout="@layout/cc_page_text" />
+        <include layout="@layout/cc_page_background" />
     </ViewFlipper>
 
 </LinearLayout>
