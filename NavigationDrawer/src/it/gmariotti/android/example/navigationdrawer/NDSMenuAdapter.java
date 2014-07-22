@@ -17,7 +17,7 @@ public class NDSMenuAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        View view = View.inflate(mContext, R.layout.cc_page_main, null);
+        View view = View.inflate(mContext, R.layout.captions_menu_main, null);
         container.addView(view, 0);
         return view;
     }

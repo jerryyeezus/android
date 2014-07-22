@@ -1,0 +1,259 @@
+<?xml version="2.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/leaf"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+            android:id="@+id/undefined"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"
+                android:clickable="false"
+                android:textSize="18sp"
+                android:text="@string/cc_options_text_undefined"
+                />
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+
+    <!--Start of row-->
+    <LinearLayout
+            android:id="@+id/courier"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"
+                android:clickable="false"
+                android:textSize="18sp"
+                android:text="@string/cc_options_text_mono_serif"
+                />
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+    <!--End of row -->
+
+    <!--Start of row-->
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:id="@+id/europa"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"
+                android:clickable="false"
+                android:textSize="18sp"
+                android:text="@string/cc_options_text_prop_serif"
+                />
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+    <!--End of row -->
+    <!--Start of row-->
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:id="@+id/frutiger_mono"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"
+                android:clickable="false"
+                android:textSize="18sp"
+                android:text="@string/cc_options_text_mono_sans"
+                />
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+    <!--End of row -->
+    <!--Start of row-->
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/frutiger"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"
+                android:clickable="false"
+                android:textSize="18sp"
+                android:text="@string/cc_options_text_prop_sans"
+                />
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+    <!--End of row -->
+
+
+    <!--Start of row-->
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dom_casual"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"
+                android:clickable="false"
+                android:textSize="18sp"
+                android:text="@string/cc_options_text_casual"
+                />
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+    <!--End of row -->
+    <!--Start of row-->
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/kaufmann"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"
+                android:clickable="false"
+                android:textSize="18sp"
+                android:text="@string/cc_options_text_cursive"
+                />
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+    <!--End of row -->
+    <!--Start of row-->
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gothic"
+            android:background="@android:drawable/list_selector_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"
+                android:clickable="false"
+                android:textSize="18sp"
+                android:text="@string/cc_options_text_captials"
+                />
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+    <!--End of row -->
+</LinearLayout>
+

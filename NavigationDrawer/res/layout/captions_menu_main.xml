@@ -1,0 +1,114 @@
+<?xml version="2.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:background="@android:drawable/list_selector_background"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <Switch
+                android:layout_width="300dp"
+                android:layout_gravity="right"
+                android:layout_height="wrap_content"
+                android:text="Closed Captions"
+                android:textColor="@color/drawer_color"
+                android:textSize="18sp"
+                android:thumbTextPadding="8dp"
+                android:switchMinWidth="19dp"
+                android:id="@+id/switch_cc_enable" android:layout_weight="0.05" android:paddingLeft="25dp"
+                android:paddingRight="25dp"/>
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/menurow_title"
+            android:src="#DADADC"/>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:background="@android:drawable/list_selector_background"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+        <Switch
+                android:layout_width="300dp"
+                android:thumbTextPadding="8dp"
+                android:switchMinWidth="19dp"
+                android:layout_height="wrap_content"
+                android:text="Use Android Defaults"
+                android:textColor="@color/drawer_color"
+                android:textSize="18sp"
+                android:enabled="false"
+                android:id="@+id/switch_cc_android" android:layout_weight="0.05" android:paddingLeft="25dp"
+                android:paddingRight="25dp"/>
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:id="@+id/cc_page_text"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/list_selector_background"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/drawer_color"
+                android:singleLine="true"
+                android:clickable="false"
+                android:textSize="18sp"
+                android:text="Captions Text"
+                />
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:id="@+id/cc_page_background"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/list_selector_background"
+            android:descendantFocusability="blocksDescendants"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/drawer_color"
+                android:singleLine="true"
+                android:clickable="false"
+                android:textSize="18sp"
+                android:text="Captions Background"
+                />
+    </LinearLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="#DADADC"/>
+</LinearLayout>

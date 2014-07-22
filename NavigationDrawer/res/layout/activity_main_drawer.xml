@@ -24,7 +24,7 @@
 
     <!-- The navigation drawer -->
 
-    <include layout="@layout/cc_main"
+    <include layout="@layout/captions_menu"
              android:id="@+id/drawer"
              android:layout_gravity="left"
              android:layout_width="wrap_content"

@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="cc_colors">
-        <item name="cc_options_color_red">red</item>
-        <item name="cc_options_color_blue">blue</item>
-        <item name="cc_options_color_black">black</item>
-        <item name="cc_options_color_yellow">yellow</item>
-        <item name="cc_options_color_white">white</item>
-        <item name="cc_options_color_magenta">magenta</item>
-        <item name="cc_options_color_green">green</item>
-        <item name="cc_options_color_cyan">cyan</item>
-    </string-array>
+
 </resources>
