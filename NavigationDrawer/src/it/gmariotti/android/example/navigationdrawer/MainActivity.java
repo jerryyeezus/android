@@ -33,10 +33,11 @@ public class MainActivity extends Activity {
     private CustomActionBarDrawerToggle mDrawerToggle;
     private ViewFlipper mCCFlipper, mCC_TextFlipper, mCC_BackgroundFlipper;
 
-    private LinearLayout mTextPage;
     private Switch mCCEnableSwitch;
     private Switch mCCAndroid;
-    private LinearLayout mCCBackground;
+    private LinearLayout mTextPage;
+    private LinearLayout mBackgroundPage;
+    private LinearLayout mLanguagePage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +74,11 @@ public class MainActivity extends Activity {
         gothic.setTypeface(AppConstants.CC_Small_Caps(getApplicationContext()));
     }
 
+    /**
+     * initialize drawer references and wiring logic for menu options
+     */
     private void initCaptionsDrawer() {
+
         Animation slide_in_right = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
         Animation slide_out_left = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
 
@@ -96,6 +101,15 @@ public class MainActivity extends Activity {
             }
         });
 
+        mLanguagePage = (LinearLayout) findViewById(R.id.cc_page_language);
+        mLanguagePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCCFlipper.setDisplayedChild(3);
+                resetFlipper();
+            }
+        });
+
         mCCEnableSwitch = (Switch) findViewById(R.id.switch_cc_enable);
         mCCAndroid = (Switch) findViewById(R.id.switch_cc_android);
         mCCAndroid.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +128,7 @@ public class MainActivity extends Activity {
             }
         });
 
+        /* Here's some Spaghetti code */
         for (int i = 0; i < mCCFlipper.getChildCount(); i++) {
             final ViewGroup flipper = (ViewGroup) mCCFlipper.getChildAt(i)
                     .findViewById(R.id.flipper);
@@ -145,14 +160,22 @@ public class MainActivity extends Activity {
                                     @Override
                                     public void onClick(View v) {
                                         switch (v.getId()) {
-                                            case R.id.cc_page_text_color_white:
-
+                                            case R.id.cc_page_text_color_black:
                                                 break;
+                                            // TODO finish all cases
                                         }
-                                        TextView textView = (TextView) ((ViewGroup) v).getChildAt(0);
-                                        String whichSetting = mCC_BackgroundFlipper.getDisplayedChild() > 0 ? "Caption Background" : "Caption Text";
+                                        TextView textView = (TextView) ((ViewGroup) v)
+                                                .getChildAt(0);
 
-                                        Toast.makeText(getApplicationContext(), whichSetting + " has been set to " + textView.getText(),
+                                        // TODO this might have to change after adding language
+                                        String whichSetting =
+                                                mCC_BackgroundFlipper.getDisplayedChild() > 0 ?
+                                                        "Caption Background" :
+                                                        "Caption Text";
+
+                                        Toast.makeText(getApplicationContext(),
+                                                whichSetting + " has been set to " +
+                                                        textView.getText(),
                                                 Toast.LENGTH_LONG).show();
                                         ((ViewFlipper) flipper).setDisplayedChild(0);
                                     }
@@ -168,7 +191,6 @@ public class MainActivity extends Activity {
                             }
                         }
                     }
-
                     subView.addView(back);
                 }
             }
@@ -177,8 +199,8 @@ public class MainActivity extends Activity {
         mCCFlipper.setInAnimation(slide_in_right);
         mCCFlipper.setOutAnimation(slide_out_left);
 
-        mCCBackground = (LinearLayout) findViewById(R.id.cc_page_background);
-        mCCBackground.setOnClickListener(new View.OnClickListener() {
+        mBackgroundPage = (LinearLayout) findViewById(R.id.cc_page_background);
+        mBackgroundPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mCCFlipper.setDisplayedChild(2);
@@ -208,11 +230,16 @@ public class MainActivity extends Activity {
             shouldEnableAndroid = true;
             shouldEnableCustom = false;
         }
+
         mCCAndroid.setEnabled(shouldEnableAndroid);
+        if (!mCCEnableSwitch.isChecked())
+            mCCAndroid.setChecked(false);
         mTextPage.setEnabled(shouldEnableCustom);
         mTextPage.getChildAt(0).setEnabled(shouldEnableCustom);
-        mCCBackground.setEnabled(shouldEnableCustom);
-        mCCBackground.getChildAt(0).setEnabled(shouldEnableCustom);
+        mBackgroundPage.setEnabled(shouldEnableCustom);
+        mBackgroundPage.getChildAt(0).setEnabled(shouldEnableCustom);
+        mLanguagePage.setEnabled(shouldEnableCustom);
+        mLanguagePage.getChildAt(0).setEnabled(shouldEnableCustom);
 
         mTextPage.invalidate();
         mCCAndroid.invalidate();

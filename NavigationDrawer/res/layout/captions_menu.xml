@@ -45,6 +45,7 @@
         <include layout="@layout/captions_menu_main" />
         <include layout="@layout/captions_menu_text_settings" />
         <include layout="@layout/captions_menu_background_settings" />
+        <include layout="@layout/captions_menu_language" />
     </ViewFlipper>
 
 </LinearLayout>

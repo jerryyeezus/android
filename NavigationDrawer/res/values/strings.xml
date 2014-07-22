@@ -32,17 +32,19 @@
     <string name="cc_options_size_small">Small</string>
     <string name="cc_options_size_normal">Normal</string>
     <string name="cc_options_size_big">Big</string>
-    <string name="cc_options_no_edges">No edge</string>
     <string name="cc_options_none">None</string>
+
+    <string name="cc_options_no_edges">No edge</string>
     <string name="cc_options_drop_shadowed_edges">Drop shadowed edges</string>
-    <string name="cc_options_edges_shadow">Shadow</string>
     <string name="cc_options_raised_edges">Raised edges</string>
-    <string name="cc_options_edges_raised">Raised</string>
     <string name="cc_options_depressed_edges">Depressed edges</string>
-    <string name="cc_options_edges_depressed">Depressed</string>
     <string name="cc_options_uniform_edges">Uniform edges</string>
+
+    <string name="cc_options_edges_raised">Raised</string>
+    <string name="cc_options_edges_depressed">Depressed</string>
     <string name="cc_options_edge_uniform">Uniform</string>
     <string name="cc_options_text_font">Font: %s</string>
+    <string name="cc_options_edges_shadow">Shadow</string>
     <string name="cc_options_text_size">size: %s</string>
     <string name="cc_options_text_edges">character edges: %s</string>
     <string name="cc_options_preview">the subtitles in your app will look like this</string>

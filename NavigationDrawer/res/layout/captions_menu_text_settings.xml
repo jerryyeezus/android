@@ -12,5 +12,8 @@
         <include layout="@layout/captions_menu_text_settings_main"/>
         <include layout="@layout/captions_menu_text_settings_color"/>
         <include layout="@layout/captions_menu_text_settings_font"/>
+        <include layout="@layout/captions_menu_text_settings_size"/>
+        <include layout="@layout/captions_menu_text_settings_opacity"/>
+        <include layout="@layout/captions_menu_text_settings_edges"/>
     </ViewFlipper>
 </LinearLayout>
