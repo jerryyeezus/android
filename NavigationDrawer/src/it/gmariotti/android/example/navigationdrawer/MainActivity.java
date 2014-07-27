@@ -134,21 +134,21 @@ public class MainActivity extends Activity {
                     .findViewById(R.id.flipper);
             if (flipper != null) {
                 for (int j = 0; j < flipper.getChildCount(); j++) {
-                    LinearLayout back = (LinearLayout) getLayoutInflater()
-                            .inflate(R.layout._back, null);
-                    back.setOnClickListener(new View.OnClickListener() {
-
-                        @Override
-                        public void onClick(View view) {
-                            if (mCC_BackgroundFlipper.getDisplayedChild() > 0) {
-                                mCC_BackgroundFlipper.setDisplayedChild(0);
-                            } else if (mCC_TextFlipper.getDisplayedChild() > 0) {
-                                mCC_TextFlipper.setDisplayedChild(0);
-                            } else {
-                                mCCFlipper.setDisplayedChild(0);
-                            }
-                        }
-                    });
+//                    LinearLayout back = (LinearLayout) getLayoutInflater()
+//                            .inflate(R.layout._back, null);
+//                    back.setOnClickListener(new View.OnClickListener() {
+//
+//                        @Override
+//                        public void onClick(View view) {
+//                            if (mCC_BackgroundFlipper.getDisplayedChild() > 0) {
+//                                mCC_BackgroundFlipper.setDisplayedChild(0);
+//                            } else if (mCC_TextFlipper.getDisplayedChild() > 0) {
+//                                mCC_TextFlipper.setDisplayedChild(0);
+//                            } else {
+//                                mCCFlipper.setDisplayedChild(0);
+//                            }
+//                        }
+//                    });
                     final ViewGroup subView = (ViewGroup) flipper.getChildAt(j);
 
                     for (int k = 0; k < subView.getChildCount(); k++) {
@@ -190,7 +190,7 @@ public class MainActivity extends Activity {
                             }
                         }
                     }
-                    subView.addView(back);
+//                    subView.addView(back);
                 }
             }
         }

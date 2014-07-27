@@ -7,7 +7,7 @@
               android:divider="@android:color/transparent"
               android:dividerHeight="0dp"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" android:weightSum="1">
+              android:layout_height="wrap_content" android:weightSum="1">
 
 
     <LinearLayout
@@ -25,10 +25,11 @@
                    android:padding="5dp"/>
         <ImageView android:layout_width="2dp" android:layout_height="match_parent"
                 android:src="@drawable/vertical_bar"/>
-        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                   android:src="@drawable/closed_captioning_symbol_40x30"
-                   android:layout_gravity="center"
-                   android:padding="5dp"/>
+        <!--<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+                   <!--android:src="@drawable/closed_captioning_symbol_40x30"-->
+                   <!--android:layout_gravity="center"-->
+                   <!--android:layout_marginLeft="5dp"-->
+                   <!--android:padding="5dp"/>-->
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,7 +51,7 @@
 
     <ViewFlipper
             android:id="@+id/flipper"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent">
         <include layout="@layout/captions_menu_main" />
         <include layout="@layout/captions_menu_text_settings" />
