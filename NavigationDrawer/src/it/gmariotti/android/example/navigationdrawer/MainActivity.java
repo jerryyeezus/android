@@ -167,7 +167,6 @@ public class MainActivity extends Activity {
                                         TextView textView = (TextView) ((ViewGroup) v)
                                                 .getChildAt(0);
 
-                                        // TODO this might have to change after adding language
                                         String whichSetting =
                                                 mCC_BackgroundFlipper.getDisplayedChild() > 0 ?
                                                         "Caption Background" :
