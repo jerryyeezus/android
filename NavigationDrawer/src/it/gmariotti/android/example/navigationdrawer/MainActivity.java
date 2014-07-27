@@ -234,11 +234,11 @@ public class MainActivity extends Activity {
         if (!mCCEnableSwitch.isChecked())
             mCCAndroid.setChecked(false);
         mTextPage.setEnabled(shouldEnableCustom);
-        mTextPage.getChildAt(0).setEnabled(shouldEnableCustom);
+        mTextPage.getChildAt(1).setEnabled(shouldEnableCustom);
         mBackgroundPage.setEnabled(shouldEnableCustom);
-        mBackgroundPage.getChildAt(0).setEnabled(shouldEnableCustom);
+        mBackgroundPage.getChildAt(1).setEnabled(shouldEnableCustom);
         mLanguagePage.setEnabled(shouldEnableCustom);
-        mLanguagePage.getChildAt(0).setEnabled(shouldEnableCustom);
+        mLanguagePage.getChildAt(1).setEnabled(shouldEnableCustom);
 
         mTextPage.invalidate();
         mCCAndroid.invalidate();
