@@ -13,4 +13,5 @@
     <color name="orangedark">#BB6008</color>
     <color name="black">#000000</color>
     <color name="red">#FF0000</color>
+    <color name="drawer_separator_color">#FFFFFF</color>
 </resources>

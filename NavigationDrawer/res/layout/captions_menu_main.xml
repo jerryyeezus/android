@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+              android:layout_height="match_parent">
     <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -12,11 +12,6 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:orientation="horizontal">
-        <!--<ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"-->
-                   <!--android:src="@drawable/closed_captioning_symbol_40x30"-->
-                   <!--android:layout_gravity="center"-->
-                   <!--android:layout_marginLeft="10dp"-->
-                <!--/>-->
         <Switch
                 android:layout_width="300dp"
                 android:layout_gravity="right"
@@ -34,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@+id/menurow_title"
-            android:src="#DADADC"/>
+            android:src="@color/drawer_separator_color"/>
 
     <LinearLayout
             android:layout_width="fill_parent"
@@ -65,15 +60,15 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:src="#DADADC"/>
+            android:src="@color/drawer_separator_color"/>
     <LinearLayout
             android:layout_width="fill_parent"
             android:id="@+id/cc_page_text"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_drawer_row"
             android:descendantFocusability="blocksDescendants"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
+            android:paddingTop="@dimen/drawer_sub_row_padding"
+            android:paddingBottom="@dimen/drawer_sub_row_padding"
             android:orientation="horizontal">
 
         <ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"
@@ -90,14 +85,14 @@
                 android:textColor="@color/drawer_color"
                 android:singleLine="true"
                 android:clickable="false"
-                android:textSize="13sp"
+                android:textSize="@dimen/drawer_subrow_textsize"
                 android:text="Captions Text"
                 />
     </LinearLayout>
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:src="#DADADC"/>
+            android:src="@color/drawer_separator_color"/>
 
 
     <LinearLayout
@@ -106,8 +101,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_drawer_row"
             android:descendantFocusability="blocksDescendants"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
+            android:paddingTop="@dimen/drawer_sub_row_padding"
+            android:paddingBottom="@dimen/drawer_sub_row_padding"
             android:orientation="horizontal">
 
         <ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"
@@ -124,14 +119,14 @@
                 android:textColor="@color/drawer_color"
                 android:singleLine="true"
                 android:clickable="false"
-                android:textSize="13sp"
+                android:textSize="@dimen/drawer_subrow_textsize"
                 android:text="Captions Background"
                 />
     </LinearLayout>
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:src="#DADADC"/>
+            android:src="@color/drawer_separator_color"/>
 
 
     <LinearLayout
@@ -140,8 +135,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_drawer_row"
             android:descendantFocusability="blocksDescendants"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
+            android:paddingTop="@dimen/drawer_sub_row_padding"
+            android:paddingBottom="@dimen/drawer_sub_row_padding"
             android:orientation="horizontal">
 
         <ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"
@@ -158,12 +153,12 @@
                 android:textColor="@color/drawer_color"
                 android:singleLine="true"
                 android:clickable="false"
-                android:textSize="13sp"
+                android:textSize="@dimen/drawer_subrow_textsize"
                 android:text="Language"
                 />
     </LinearLayout>
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:src="#DADADC"/>
+            android:src="@color/drawer_separator_color"/>
 </LinearLayout>

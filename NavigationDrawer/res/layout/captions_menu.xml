@@ -5,7 +5,7 @@
               android:background="@drawable/main_gradient"
               android:choiceMode="singleChoice"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" android:weightSum="1">
+              android:layout_height="match_parent" android:weightSum="1">
 
 
     <LinearLayout
@@ -21,6 +21,7 @@
                    android:id="@+id/drawer_back"
                    android:clickable="true"
                    android:alpha=".90"
+                   android:visibility="invisible"
                    android:layout_gravity="center"
                    android:padding="5dp"/>
         <TextView
@@ -36,7 +37,7 @@
                 android:textSize="17sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Caption Settings"
-                android:id="@+id/textView" android:layout_weight="0.05"/>
+                android:id="@+id/drawer_header_textview" android:layout_weight="0.05"/>
     </LinearLayout>
     <ImageView
             android:layout_width="match_parent"

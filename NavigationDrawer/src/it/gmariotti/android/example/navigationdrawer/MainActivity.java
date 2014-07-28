@@ -40,6 +40,8 @@ public class MainActivity extends Activity {
     private LinearLayout mBackgroundPage;
     private LinearLayout mLanguagePage;
 
+    private TextView mHeaderTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +89,8 @@ public class MainActivity extends Activity {
         mDrawer.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
         mDrawer.setDrawerListener(mDrawerToggle);
 
+        mHeaderTextView = (TextView) findViewById(R.id.drawer_header_textview);
+
         mDrawerToggle = new CustomActionBarDrawerToggle(this, mDrawer);
 
         mCCFlipper = (ViewFlipper) findViewById(R.id.flipper);
@@ -97,7 +101,9 @@ public class MainActivity extends Activity {
         mTextPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mDrawerBack.setVisibility(View.VISIBLE);
                 mCCFlipper.setDisplayedChild(1);
+                mHeaderTextView.setText("Caption Text");
                 resetFlipper();
             }
         });
@@ -106,7 +112,20 @@ public class MainActivity extends Activity {
         mLanguagePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mDrawerBack.setVisibility(View.VISIBLE);
                 mCCFlipper.setDisplayedChild(3);
+                mHeaderTextView.setText("Caption Language");
+                resetFlipper();
+            }
+        });
+
+        mBackgroundPage = (LinearLayout) findViewById(R.id.cc_page_background);
+        mBackgroundPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDrawerBack.setVisibility(View.VISIBLE);
+                mCCFlipper.setDisplayedChild(2);
+                mHeaderTextView.setText("Caption Background");
                 resetFlipper();
             }
         });
@@ -134,7 +153,16 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                mCCFlipper.setDisplayedChild(0);
+                // TODO anim
+                if (mCC_BackgroundFlipper.getDisplayedChild() > 0) {
+                    mCC_BackgroundFlipper.setDisplayedChild(0);
+                } else if (mCC_TextFlipper.getDisplayedChild() > 0) {
+                    mCC_TextFlipper.setDisplayedChild(0);
+                } else {
+                    mDrawerBack.setVisibility(View.INVISIBLE);
+                    mHeaderTextView.setText("Caption Settings");
+                    mCCFlipper.setDisplayedChild(0);
+                }
             }
         });
 
@@ -144,21 +172,6 @@ public class MainActivity extends Activity {
                     .findViewById(R.id.flipper);
             if (flipper != null) {
                 for (int j = 0; j < flipper.getChildCount(); j++) {
-//                    LinearLayout back = (LinearLayout) getLayoutInflater()
-//                            .inflate(R.layout._back, null);
-//                    back.setOnClickListener(new View.OnClickListener() {
-//
-//                        @Override
-//                        public void onClick(View view) {
-//                            if (mCC_BackgroundFlipper.getDisplayedChild() > 0) {
-//                                mCC_BackgroundFlipper.setDisplayedChild(0);
-//                            } else if (mCC_TextFlipper.getDisplayedChild() > 0) {
-//                                mCC_TextFlipper.setDisplayedChild(0);
-//                            } else {
-//                                mCCFlipper.setDisplayedChild(0);
-//                            }
-//                        }
-//                    });
                     final ViewGroup subView = (ViewGroup) flipper.getChildAt(j);
 
                     for (int k = 0; k < subView.getChildCount(); k++) {
@@ -169,6 +182,7 @@ public class MainActivity extends Activity {
 
                                     @Override
                                     public void onClick(View v) {
+                                        mDrawerBack.setVisibility(View.VISIBLE);
                                         switch (v.getId()) {
                                             case R.id.cc_page_text_color_black:
                                                 break;
@@ -194,27 +208,19 @@ public class MainActivity extends Activity {
                                 leafView.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
+                                        mDrawerBack.setVisibility(View.VISIBLE);
                                         ((ViewFlipper) flipper).setDisplayedChild(leafIndex);
                                     }
                                 });
                             }
                         }
                     }
-//                    subView.addView(back);
                 }
             }
         }
 
         mCCFlipper.setInAnimation(slide_in_right);
         mCCFlipper.setOutAnimation(slide_out_left);
-
-        mBackgroundPage = (LinearLayout) findViewById(R.id.cc_page_background);
-        mBackgroundPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mCCFlipper.setDisplayedChild(2);
-            }
-        });
 
         enableRelevantButtons();
     }
