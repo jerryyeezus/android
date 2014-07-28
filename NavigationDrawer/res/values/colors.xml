@@ -2,7 +2,7 @@
 <resources>
     <color name="grey">#7A7A7A</color>
     <color name="text_enabled">#FFFFFF</color>
-    <color name="text_disabled">#7A7A7A</color>
+     <color name="text_disabled">#F0F0F0</color>
     <color name="background">#0044AA</color>
     <color name="bluelight">#449DEF</color>
     <color name="bluedark">#2F6699</color>
