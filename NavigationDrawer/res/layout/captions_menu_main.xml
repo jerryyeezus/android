@@ -12,11 +12,11 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:orientation="horizontal">
-        <ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"
-                   android:src="@drawable/closed_captioning_symbol_40x30"
-                   android:layout_gravity="center"
-                   android:layout_marginLeft="10dp"
-                />
+        <!--<ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"-->
+                   <!--android:src="@drawable/closed_captioning_symbol_40x30"-->
+                   <!--android:layout_gravity="center"-->
+                   <!--android:layout_marginLeft="10dp"-->
+                <!--/>-->
         <Switch
                 android:layout_width="300dp"
                 android:layout_gravity="right"
@@ -44,11 +44,11 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:orientation="horizontal">
-        <ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"
-                   android:src="@drawable/android"
-                   android:layout_gravity="center"
-                   android:layout_marginLeft="10dp"
-                />
+        <!--<ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"-->
+                   <!--android:src="@drawable/android"-->
+                   <!--android:layout_gravity="center"-->
+                   <!--android:layout_marginLeft="10dp"-->
+                <!--/>-->
         <Switch
                 android:layout_width="300dp"
                 android:thumbTextPadding="8dp"
@@ -70,10 +70,10 @@
             android:layout_width="fill_parent"
             android:id="@+id/cc_page_text"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/list_selector_background"
+            android:background="@drawable/bg_drawer_row"
             android:descendantFocusability="blocksDescendants"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
             android:orientation="horizontal">
 
         <ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"
@@ -90,7 +90,7 @@
                 android:textColor="@color/drawer_color"
                 android:singleLine="true"
                 android:clickable="false"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:text="Captions Text"
                 />
     </LinearLayout>
@@ -104,10 +104,10 @@
             android:layout_width="fill_parent"
             android:id="@+id/cc_page_background"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/list_selector_background"
+            android:background="@drawable/bg_drawer_row"
             android:descendantFocusability="blocksDescendants"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
             android:orientation="horizontal">
 
         <ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"
@@ -124,7 +124,7 @@
                 android:textColor="@color/drawer_color"
                 android:singleLine="true"
                 android:clickable="false"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:text="Captions Background"
                 />
     </LinearLayout>
@@ -138,10 +138,10 @@
             android:layout_width="fill_parent"
             android:id="@+id/cc_page_language"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/list_selector_background"
+            android:background="@drawable/bg_drawer_row"
             android:descendantFocusability="blocksDescendants"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
             android:orientation="horizontal">
 
         <ImageView android:layout_width="@dimen/menu_icon_size" android:layout_height="@dimen/menu_icon_size"
@@ -158,7 +158,7 @@
                 android:textColor="@color/drawer_color"
                 android:singleLine="true"
                 android:clickable="false"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:text="Language"
                 />
     </LinearLayout>

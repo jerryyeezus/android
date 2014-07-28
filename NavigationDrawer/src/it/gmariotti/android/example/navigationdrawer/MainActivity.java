@@ -29,6 +29,7 @@ import android.widget.*;
 
 public class MainActivity extends Activity {
 
+    private ImageView mDrawerBack;
     private DrawerLayout mDrawer;
     private CustomActionBarDrawerToggle mDrawerToggle;
     private ViewFlipper mCCFlipper, mCC_TextFlipper, mCC_BackgroundFlipper;
@@ -125,6 +126,15 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 enableRelevantButtons();
                 v.invalidate();
+            }
+        });
+
+        mDrawerBack = (ImageView) findViewById(R.id.drawer_back);
+        mDrawerBack.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                mCCFlipper.setDisplayedChild(0);
             }
         });
 

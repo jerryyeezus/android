@@ -12,20 +12,17 @@
             android:layout_width="fill_parent"
             android:background="@drawable/bg"
             android:layout_height="42dp"
+            android:alpha="0.9"
             android:orientation="horizontal">
 
 
         <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                   android:src="@drawable/back_button"
+                   android:src="@drawable/back_button_sel"
+                   android:id="@+id/drawer_back"
                    android:clickable="true"
-                   android:alpha=".75"
+                   android:alpha=".90"
                    android:layout_gravity="center"
                    android:padding="5dp"/>
-        <!--<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"-->
-                   <!--android:src="@drawable/closed_captioning_symbol_40x30"-->
-                   <!--android:layout_gravity="center"-->
-                   <!--android:layout_marginLeft="5dp"-->
-                   <!--android:padding="5dp"/>-->
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,6 +32,7 @@
                 android:textColor="#FFFFFF"
                 android:singleLine="true"
                 android:textStyle="bold"
+                android:fontFamily="default-bold"
                 android:textSize="17sp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Caption Settings"
